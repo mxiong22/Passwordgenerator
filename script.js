@@ -3,13 +3,16 @@ var UpperCaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 var Numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var SpecialCharacters = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^",
   "~", "*", "?", ":"]
-var AllCharacters = []
-console.log(AllCharacters)
+
+
 var LowerCaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var generateBtn = document.querySelector("#generate");
 
 
+
+
 function generatePassword() {
+  var AllCharacters = []
   var length = prompt("Please choose the length of your password")
 
   while (length < 8 || length > 128) {
@@ -18,30 +21,39 @@ function generatePassword() {
   }
   var UpperCaseConfirm = confirm("Would you like to add uppercase letters?")
   if (UpperCaseConfirm == true) {
-    AllCharacters = AllCharacters + UpperCaseCharacters
-    console.log(AllCharacters)
+    AllCharacters = AllCharacters.concat(UpperCaseCharacters) 
+    console.log("UpperCase")
   }
 
   var LowerCaseConfirm = confirm("Would you like to add lowercase letters?")
   if (LowerCaseConfirm == true) {
-    AllCharacters = AllCharacters + LowerCaseCharacters
-    console.log(AllCharacters)
+    AllCharacters =AllCharacters.concat(LowerCaseCharacters) 
+    console.log("LowerCase")
   }
 
   var NumbersConfirm = confirm("Would you like to add numbers?")
   if (NumbersConfirm == true) {
-    AllCharacters = AllCharacters + Numbers
-    console.log(AllCharacters)
+    AllCharacters = AllCharacters.concat(Numbers) 
+    console.log("Numbers")
   }
 
   var SpecialCharactersConfirm = confirm("Would you like to add special characters")
   if (SpecialCharactersConfirm == true) {
-    AllCharacters = AllCharacters + SpecialCharacters
-    console.log(AllCharacters)
+    AllCharacters = AllCharacters.concat(SpecialCharacters) 
+    console.log("SpecialCharacters")
   }
-  //Keep this at end of function
-  AllCharacters = []
+  console.log(AllCharacters)
+  console.log("To do create a password with .length ", length)
+var NewPasswordArray= []
+
+for (var i= 0;i < length ; i++){
+  console.log ("To do I can use this index var " ,i) 
+
 }
+
+
+}
+
 
 // Write password to the #password input
 function writePassword() {
